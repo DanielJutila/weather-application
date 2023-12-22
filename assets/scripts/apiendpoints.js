@@ -6,8 +6,6 @@ async function getApi(city, state, country){
       })
       .then(function(data){
         console.log(data);
-        // console.log(data);
-        // console.log(data.list[0].main.feels_like)
         saveSearchHistory(data.city.coord.lat, data.city.coord.lon);
       });
 }
@@ -24,8 +22,6 @@ function searchedCity(){
     })
 }
 
-
-
 //saves search history
 function saveSearchHistory(lat, lon){
     let searchHistory = getSearchHistory();
@@ -40,6 +36,7 @@ function saveSearchHistory(lat, lon){
         localStorage.setItem('searchHistory', JSON.stringify(searchHistory))
     }
 }
+//gets search history
 function getSearchHistory(){
     let searchHistory = localStorage.getItem('searchHistory');
     return searchHistory ? JSON.parse(searchHistory) : [];
