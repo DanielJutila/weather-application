@@ -29,14 +29,14 @@ let today = dayjs().format('MMM D, YYYY');
 let currentWeather = $('.currentWeather');
 function showWeather(data){
     currentWeather.empty();
-    let currentArea = $('<p>').addClass('fw-bold').text(data.city.name + ' (' + today + ')');
+    let currentArea = $('<p>').addClass('fw-bold m-2').text(data.city.name + ' (' + today + ')');
     let icon = data.list[0].weather[0].icon;
     let img = $('<img>');
     img.attr('src', 'https://openweathermap.org/img/w/'+icon+'.png');
     currentArea.append(img);
-    let currentTemp = $('<p>').addClass('').text('Temp: ' + data.list[0].main.temp + ' °F');
-    let currentHumidity = $('<p>').addClass('').text('Wind: ' + data.list[0].main.humidity + ' %');
-    let currentWind = $('<p>').addClass('').text('Humidity: ' + data.list[0].wind.speed + ' MPH');
+    let currentTemp = $('<p>').addClass('m-2').text('Temp: ' + data.list[0].main.temp + ' °F');
+    let currentHumidity = $('<p>').addClass('m-2').text('Wind: ' + data.list[0].main.humidity + ' %');
+    let currentWind = $('<p>').addClass('m-2').text('Humidity: ' + data.list[0].wind.speed + ' MPH');
     currentWeather.append(currentArea);
     currentWeather.append(currentTemp);
     currentWeather.append(currentHumidity);
