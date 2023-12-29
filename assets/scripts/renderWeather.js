@@ -1,5 +1,6 @@
 $(document).ready(function () {
     let getSearch = getSearchHistory();
+
     let history = $('#searchHistory');
     function previousSearches() {
         for (let i = 0; i < getSearch.length; i++) {
