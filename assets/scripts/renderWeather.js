@@ -1,18 +1,31 @@
-$(document).ready(function() {
-let getSearch = getSearchHistory();
-let history = $('#searchHistory');
-let searchSize = 8;
-function previousSearches(){
-    for(let i = 0; i <searchSize; i++){
-        let parts = getSearch[i].split(',');
-        let cityName = parts[2];
-        let newDiv = $("<div>").attr('id','cities').addClass('bg-secondary container m-1 p-2 rounded text-center h5').text(cityName);
-        history.append(newDiv);
+$(document).ready(function () {
+    let getSearch = getSearchHistory();
+    let history = $('#searchHistory');
+    function previousSearches() {
+        for (let i = 0; i < getSearch.length; i++) {
+            let parts = getSearch[i].split(',');
+            let cityName = parts[2];
+            let newDiv = $("<div>").addClass('bg-secondary container m-1 p-2 rounded text-center h5 cities').text(cityName);
+            history.append(newDiv);
+        }
     }
-}
-function clickHistory(){
-    
-}
-previousSearches();
-console.log(getSearch);
+    //compares clicked item to saved local storage
+    function matchHistory() {
+        $('.cities').on('click', function () {
+            for (let i = 0; i < getSearch.length; i++) {
+                let parts = getSearch[i].split(',');
+                if (parts[2] === $(this).text()){
+                    getApiGeo(parts[0],parts[1]);
+                    
+                }
+            }
+        });
+    }
+    previousSearches();
+    matchHistory();
+    console.log(getSearch);
 });
+//gets weather and displays the data
+function showWeather(data){
+    console.log(data);
+}
