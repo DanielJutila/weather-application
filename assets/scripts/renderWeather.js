@@ -5,7 +5,7 @@ $(document).ready(function () {
         for (let i = 0; i < getSearch.length; i++) {
             let parts = getSearch[i].split(',');
             let cityName = parts[2];
-            let newDiv = $("<div>").addClass('bg-secondary container m-1 p-2 rounded text-center h5 cities').text(cityName);
+            let newDiv = $("<div>").addClass('bg-secondary container m-1 mb-2 p-2 rounded text-center h5 cities').text(cityName);
             history.append(newDiv);
         }
     }
@@ -23,9 +23,4 @@ $(document).ready(function () {
     }
     previousSearches();
     matchHistory();
-    console.log(getSearch);
 });
-//gets weather and displays the data
-function showWeather(data){
-    console.log(data);
-}
