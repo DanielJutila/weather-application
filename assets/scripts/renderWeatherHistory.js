@@ -8,6 +8,7 @@ $(document).ready(function () {
             let cityName = parts[2];
             let newDiv = $("<div>").addClass('bg-secondary container m-1 mb-2 p-2 rounded text-center h5 cities').text(cityName);
             history.append(newDiv);
+        
         }
     }
     //compares clicked item to saved local storage
