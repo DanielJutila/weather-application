@@ -25,7 +25,7 @@
     <nav class="col-3 searchNav">
       <div class="d-inline-flex p-2">
         <input class="form-control flex-coloumn" id="searchBar" placeholder="city, state, country"></input>
-        <button class="btn border border-secondary" id="searchBtn" type="submit" onclick="refreshDiv()">Search</button>
+        <button class="btn border border-secondary" id="searchBtn" type="submit">Search</button>
       </div>
 
       <div class='text-white col historyContainer w-50' id="searchHistory">
@@ -46,11 +46,6 @@
     <script src="./assets/scripts/currentWeatherAPI.js"></script>
     <script src="./assets/scripts/renderWeatherHistory.js"></script>
     <script src="./assets/scripts/fiveDayForecastAPI.js"></script>
-    <script type="text/javascript">
-      function refreshDiv(){
-        $('#searchHistory').load(location.href + " #searchHistory")
-      }
-    </script>
   </footer>
 </body>
 
