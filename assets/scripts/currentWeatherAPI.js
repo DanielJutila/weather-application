@@ -1,4 +1,4 @@
-
+//gets api when typing in city, state, country
 function getApi(city, state, country) {
     let requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "," + state + "," + country + '&appid=f8b3ce2dc2fd8e1b0d8f9ba635463824&units=imperial'
     fetch(requestUrl)
@@ -6,10 +6,8 @@ function getApi(city, state, country) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             saveSearchHistory(data.coord.lat, data.coord.lon, data.name);
             showWeather(data);
-            showFiveDay(data);
         });
 }
 //gets api request from lat and lon
@@ -20,9 +18,7 @@ function getApiGeo(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            showWeather(data);
-            showFiveDay(data);
-            console.log(data);
+            showWeather(data);            
         });
 }
 
@@ -45,10 +41,7 @@ function showWeather(data) {
     currentWeather.append(currentHumidity);
     currentWeather.append(currentWind);
 }
-let fiveDay = $('#fiveDay');
-function showFiveDay(data){
 
-}
 
 function pressSearched() {
     $('#searchBtn').on("click", function () {
