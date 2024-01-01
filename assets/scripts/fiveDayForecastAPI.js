@@ -5,7 +5,6 @@ function fiveDayForcast(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             renderFiveDays(data);
         });
 }
@@ -33,11 +32,6 @@ function renderFiveDays(data) {
             futureDate.append(currentHumidity);
             futureDate.append(currentWind);
             fiveDays.append(futureDate);
-            //fiveDays.append(currentTemp);
-            // fiveDays.append(currentHumidity);
-            // fiveDays.append(currentWind);
-            
-
         }
     }
 }
